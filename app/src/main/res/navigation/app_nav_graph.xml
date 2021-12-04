@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/app_nav_graph"
+    app:startDestination="@id/actionConversation">
+
+    <fragment
+        android:id="@+id/actionConversation"
+        android:name="non.shahad.twilioconversation.screens.profile.ProfileFragment"
+        android:label="ProfileFragment" />
+    <fragment
+        android:id="@+id/actionProfile"
+        android:name="non.shahad.twilioconversation.screens.conversations.ConversationFragment"
+        android:label="ConversationFragment" />
+    <fragment
+        android:id="@+id/actionUser"
+        android:name="non.shahad.twilioconversation.screens.users.UserFragment"
+        android:label="UserFragment" />
+</navigation>

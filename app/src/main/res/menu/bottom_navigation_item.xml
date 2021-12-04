@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/actionConversation"
+        android:title="Conversations"
+        android:icon="@drawable/ic_baseline_message_24"/>
+
+    <item
+        android:id="@+id/actionUser"
+        android:title="Users"
+        android:icon="@drawable/ic_baseline_people_24"/>
+
+    <item
+        android:id="@+id/actionProfile"
+        android:title="Profile"
+        android:icon="@drawable/ic_baseline_person_24"/>
+</menu>
