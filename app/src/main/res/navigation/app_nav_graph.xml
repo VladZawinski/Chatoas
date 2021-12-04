@@ -2,18 +2,24 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/app_nav_graph"
-    app:startDestination="@id/actionConversation">
+    app:startDestination="@id/authFragment">
+
 
     <fragment
-        android:id="@+id/actionConversation"
-        android:name="non.shahad.twilioconversation.screens.profile.ProfileFragment"
-        android:label="ProfileFragment" />
+        android:id="@+id/authFragment"
+        android:name="non.shahad.twilioconversation.screens.auth.AuthFragment"
+        android:label="AuthFragment" >
+        <action
+            android:id="@+id/action_authFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+
     <fragment
-        android:id="@+id/actionProfile"
-        android:name="non.shahad.twilioconversation.screens.conversations.ConversationFragment"
-        android:label="ConversationFragment" />
-    <fragment
-        android:id="@+id/actionUser"
-        android:name="non.shahad.twilioconversation.screens.users.UserFragment"
-        android:label="UserFragment" />
+        android:id="@+id/mainFragment"
+        android:name="non.shahad.twilioconversation.screens.main.main.MainFragment"
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_authFragment"
+            app:destination="@id/authFragment" />
+    </fragment>
 </navigation>

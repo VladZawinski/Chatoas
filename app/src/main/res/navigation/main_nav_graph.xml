@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/actionConversation">
+
+    <fragment
+        android:id="@+id/actionConversation"
+        android:name="non.shahad.twilioconversation.screens.main.profile.ProfileFragment"
+        android:label="ProfileFragment" >
+        <action
+            android:id="@+id/action_actionConversation_to_chatFragment"
+            app:destination="@id/chatFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/actionProfile"
+        android:name="non.shahad.twilioconversation.screens.main.conversations.ConversationFragment"
+        android:label="ConversationFragment" />
+    <fragment
+        android:id="@+id/actionUser"
+        android:name="non.shahad.twilioconversation.screens.main.users.UserFragment"
+        android:label="UserFragment" >
+        <action
+            android:id="@+id/actionUserToChat"
+            app:destination="@id/chatFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="non.shahad.twilioconversation.screens.main.chat.ChatFragment"
+        android:label="ChatFragment" />
+
+</navigation>

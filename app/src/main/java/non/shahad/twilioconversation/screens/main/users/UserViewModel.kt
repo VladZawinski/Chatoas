@@ -1,4 +1,4 @@
-package non.shahad.twilioconversation.screens.users
+package non.shahad.twilioconversation.screens.main.users
 
 import dagger.hilt.android.lifecycle.HiltViewModel
 import non.shahad.twilioconversation.base.OrbitMVIViewModel

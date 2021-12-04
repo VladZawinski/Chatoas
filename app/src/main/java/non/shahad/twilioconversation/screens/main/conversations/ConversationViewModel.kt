@@ -1,4 +1,4 @@
-package non.shahad.twilioconversation.screens.conversations
+package non.shahad.twilioconversation.screens.main.conversations
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel

@@ -1,7 +1,8 @@
-package non.shahad.twilioconversation.screens.chat
+package non.shahad.twilioconversation.screens.main.chat
 
 import dagger.hilt.android.lifecycle.HiltViewModel
 import non.shahad.twilioconversation.base.OrbitMVIViewModel
+import non.shahad.twilioconversation.service.model.Message
 import non.shahad.twilioconversation.service.repository.ChatRepository
 import org.orbitmvi.orbit.Container
 import org.orbitmvi.orbit.syntax.simple.intent
@@ -33,7 +34,7 @@ class ChatViewModel @Inject constructor(
 }
 
 data class ChatState(
-    val messages: List<String> = emptyList()
+    val messages: List<Message> = emptyList()
 )
 
 sealed class ChatSideEffect {

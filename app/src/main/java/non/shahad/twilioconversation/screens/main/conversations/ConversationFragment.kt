@@ -1,4 +1,4 @@
-package non.shahad.twilioconversation.screens.conversations
+package non.shahad.twilioconversation.screens.main.conversations
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels

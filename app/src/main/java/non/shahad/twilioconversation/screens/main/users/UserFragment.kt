@@ -1,16 +1,18 @@
-package non.shahad.twilioconversation.screens.users
+package non.shahad.twilioconversation.screens.main.users
 
 import android.app.AlertDialog
 import android.os.Bundle
 import android.view.View
-import androidx.fragment.app.Fragment
+import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.xwray.groupie.GroupieAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import non.shahad.twilioconversation.R
 import non.shahad.twilioconversation.base.OrbitMVIFragment
 import non.shahad.twilioconversation.databinding.FragmentUsersBinding
 import non.shahad.twilioconversation.groupie.UserItem
+import timber.log.Timber
 
 @AndroidEntryPoint
 class UserFragment(override val layoutRes: Int = R.layout.fragment_users) : OrbitMVIFragment<FragmentUsersBinding,UserViewModel,UserState, UserSideEffect>(){
@@ -33,13 +35,14 @@ class UserFragment(override val layoutRes: Int = R.layout.fragment_users) : Orbi
 
             }
             is UserSideEffect.ShowError -> {
-
+                Timber.d("${sideEffect.message}")
             }
             UserSideEffect.ShowLoading -> {
 
             }
             is UserSideEffect.ChatRoomCreated -> {
                 alert.hide()
+                findNavController().navigate(R.id.actionUserToChat, bundleOf("conversationId" to sideEffect.conversationId))
             }
             UserSideEffect.CreatingChatRoom -> {
                 alert.show()

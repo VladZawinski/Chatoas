@@ -7,6 +7,7 @@ import non.shahad.twilioconversation.service.request.SendMessageRequest
 import retrofit2.http.*
 
 interface TwilioService {
+
     @GET("chat/conversations")
     suspend fun fetchConversations(): List<Conversation>
 
