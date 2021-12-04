@@ -6,16 +6,16 @@
 
     <fragment
         android:id="@+id/actionConversation"
-        android:name="non.shahad.twilioconversation.screens.main.profile.ProfileFragment"
-        android:label="ProfileFragment" >
+        android:name="non.shahad.twilioconversation.screens.main.conversations.ConversationFragment"
+        android:label="ConversationFragment" >
         <action
-            android:id="@+id/action_actionConversation_to_chatFragment"
+            android:id="@+id/actionConversationToChat"
             app:destination="@id/chatFragment" />
     </fragment>
     <fragment
         android:id="@+id/actionProfile"
-        android:name="non.shahad.twilioconversation.screens.main.conversations.ConversationFragment"
-        android:label="ConversationFragment" />
+        android:name="non.shahad.twilioconversation.screens.main.profile.ProfileFragment"
+        android:label="ProfileFragment" />
     <fragment
         android:id="@+id/actionUser"
         android:name="non.shahad.twilioconversation.screens.main.users.UserFragment"

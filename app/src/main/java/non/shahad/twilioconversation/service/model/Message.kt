@@ -2,7 +2,7 @@ package non.shahad.twilioconversation.service.model
 
 data class Message(
     val sId: String,
-    val sender: Sender,
+    val type: String,
     val body: String
 )
 

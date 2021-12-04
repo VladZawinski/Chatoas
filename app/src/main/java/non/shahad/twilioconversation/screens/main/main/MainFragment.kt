@@ -25,6 +25,13 @@ class MainFragment: Fragment(){
             val mainNavController = root.findViewById<View>(R.id.navArea).findNavController()
             bottomNavigationView.setupWithNavController(mainNavController)
             bottomNavigationView.setOnItemReselectedListener {  }
+            mainNavController.addOnDestinationChangedListener { controller, destination, arguments ->
+                if (destination.id == R.id.chatFragment){
+                    bottomNavigationView.visibility = View.GONE
+                }else {
+                    bottomNavigationView.visibility = View.VISIBLE
+                }
+            }
         }
 
         return binding.root

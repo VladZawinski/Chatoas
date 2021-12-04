@@ -4,8 +4,7 @@ import com.squareup.moshi.Json
 
 data class Conversation(
     val sid: String,
-    val friendlyName: String,
-    val participants: List<Participant>
+    val peer: Participant
 )
 
 data class Participant(

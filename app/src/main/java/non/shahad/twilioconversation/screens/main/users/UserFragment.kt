@@ -58,7 +58,7 @@ class UserFragment(override val layoutRes: Int = R.layout.fragment_users) : Orbi
     }
 
     override fun render(state: UserState) {
-        userAdapter.addAll(state.users.map { UserItem(it, onChatClick = { user -> viewModel.createChatRoom(user.id) }) })
+        userAdapter.update(state.users.map { UserItem(it, onChatClick = { user -> viewModel.createChatRoom(user.id) }) })
     }
 
 }

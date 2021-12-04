@@ -69,4 +69,7 @@ dependencies {
     implementation 'org.orbit-mvi:orbit-core:4.2.0'
     implementation 'org.orbit-mvi:orbit-viewmodel:4.2.0'
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.0'
+
+    debugImplementation 'com.readystatesoftware.chuck:library:1.1.0'
+    releaseImplementation 'com.readystatesoftware.chuck:library-no-op:1.1.0'
 }

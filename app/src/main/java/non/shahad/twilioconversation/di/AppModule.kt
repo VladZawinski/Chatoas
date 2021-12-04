@@ -1,6 +1,7 @@
 package non.shahad.twilioconversation.di
 
 import android.content.Context
+import com.readystatesoftware.chuck.ChuckInterceptor
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -24,8 +25,9 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideOkHttpClient(preferenceHelper: SharedPreferenceHelper) = OkHttpClient.Builder()
+    fun provideOkHttpClient(@ApplicationContext context: Context,preferenceHelper: SharedPreferenceHelper) = OkHttpClient.Builder()
         .addInterceptor(AuthInterceptor(preferenceHelper))
+        .addInterceptor(ChuckInterceptor(context))
         .build()
 
     @Provides
@@ -43,9 +45,9 @@ object AppModule {
         @ApplicationContext context: Context
     ) = SharedPreferenceHelper(context,"things-we-were-promised.pref")
 
-//    @Provides
-//    @Singleton
-//    fun provideConversationRepository(service: TwilioService) = ConversationRepository(service)
+    @Provides
+    @Singleton
+    fun provideConversationRepository(service: TwilioService) = ConversationRepository(service)
 
     @Provides
     @Singleton

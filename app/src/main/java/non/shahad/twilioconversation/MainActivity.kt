@@ -23,7 +23,6 @@ class MainActivity : AppCompatActivity(), NavCalls {
         makeStatusBarWhite()
         super.onCreate(savedInstanceState)
         DataBindingUtil.setContentView<ActivityMainBinding>(this,R.layout.activity_main)
-        preferenceHelper.setLogInStatus(false)
         if (preferenceHelper.isLoggedIn()) {
             findNavController(R.id.navContainer).navigate(R.id.mainFragment)
         }else {
