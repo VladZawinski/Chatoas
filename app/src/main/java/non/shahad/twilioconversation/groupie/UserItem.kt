@@ -1,5 +1,6 @@
 package non.shahad.twilioconversation.groupie
 
+import android.view.View
 import com.xwray.groupie.databinding.BindableItem
 import non.shahad.twilioconversation.R
 import non.shahad.twilioconversation.databinding.ViewholderUserBinding
@@ -12,6 +13,9 @@ class UserItem constructor(
 
     override fun bind(binding: ViewholderUserBinding, position: Int) {
         binding.user = user
+        if (user.isAlreadyConnected){
+            binding.materialButton.visibility = View.GONE
+        }
         binding.materialButton.setOnClickListener { onChatClick(user) }
     }
 
