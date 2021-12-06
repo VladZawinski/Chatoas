@@ -3,7 +3,8 @@ package non.shahad.twilioconversation.service.model
 import com.squareup.moshi.Json
 
 data class Conversation(
-    val sid: String,
+    val chatServiceSid: String,
+    val conversationSid: String,
     val peer: Participant
 )
 

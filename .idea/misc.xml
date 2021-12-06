@@ -19,7 +19,9 @@
         <entry key="app/src/main/res/layout/layout_loading.xml" value="0.5192708333333333" />
         <entry key="app/src/main/res/layout/viewholder_conversation.xml" value="0.5192708333333333" />
         <entry key="app/src/main/res/layout/viewholder_incoming_chat.xml" value="0.29739583333333336" />
+        <entry key="app/src/main/res/layout/viewholder_incoming_image.xml" value="0.5192708333333333" />
         <entry key="app/src/main/res/layout/viewholder_outgoing_chat.xml" value="0.29739583333333336" />
+        <entry key="app/src/main/res/layout/viewholder_outgoing_image.xml" value="0.5192708333333333" />
         <entry key="app/src/main/res/layout/viewholder_user.xml" value="0.3078125" />
         <entry key="app/src/main/res/menu/bottom_navigation_item.xml" value="0.5192708333333333" />
       </map>

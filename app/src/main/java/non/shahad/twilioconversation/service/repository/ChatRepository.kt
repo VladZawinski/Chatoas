@@ -7,7 +7,7 @@ import javax.inject.Inject
 class ChatRepository @Inject constructor(
     private val service: TwilioService
 ) {
-    suspend fun fetchMessages(conversationId: String) = service.fetchMessages(conversationId)
+    suspend fun fetchMessages(conversationSid: String,chatServiceSid: String) = service.fetchMessages(conversationSid,chatServiceSid).map { it.toDomainModel() }
 
     suspend fun sendMessage(message: String,sId: String) = service.sendMessage(SendMessageRequest(sId,message))
 }

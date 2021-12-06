@@ -4,6 +4,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
 import non.shahad.twilioconversation.base.OrbitMVIViewModel
 import non.shahad.twilioconversation.service.model.Message
+import non.shahad.twilioconversation.service.model.MessageUiModel
 import non.shahad.twilioconversation.service.repository.ChatRepository
 import org.orbitmvi.orbit.Container
 import org.orbitmvi.orbit.syntax.simple.intent
@@ -22,27 +23,27 @@ class ChatViewModel @Inject constructor(
         = container(ChatState())
 
 
-    fun fetchMessages(conversationId: String) = intent {
+    fun fetchMessages(conversationId: String,chatServiceSid: String) = intent {
         postSideEffect(ChatSideEffect.Pooling)
         try {
             while (true){
                 if (!state.isSendingMessage){
-                    val result = repo.fetchMessages(conversationId)
+                    val result = repo.fetchMessages(conversationId,chatServiceSid)
                     reduce {
-                        state.copy(messages = result, conversationId = conversationId)
+                        state.copy(messages = result, conversationId = conversationId, chatServiceSid = chatServiceSid)
                     }
                 }
                 delay(2000)
             }
         }catch (e: Throwable){
-
+            Timber.d(e)
         }
     }
 
     private fun fakeAddBubble(message: String) = intent {
-        val currentList = mutableListOf<Message>().also {
+        val currentList = mutableListOf<MessageUiModel>().also {
             it.addAll(state.messages)
-            it.add(0,Message("","outgoing",message))
+            it.add(0, MessageUiModel("","outgoing-text","outgoing","", message))
         }
 
         reduce {
@@ -56,6 +57,7 @@ class ChatViewModel @Inject constructor(
                 state.copy(isSendingMessage = true)
             }
             fakeAddBubble(message)
+            postSideEffect(ChatSideEffect.FakeSent)
             repo.sendMessage(message,state.conversationId)
             reduce {
                 state.copy(isSendingMessage = false)
@@ -70,11 +72,13 @@ class ChatViewModel @Inject constructor(
 
 data class ChatState(
     val conversationId: String = "",
-    val messages: List<Message> = emptyList(),
+    val chatServiceSid: String = "",
+    val messages: List<MessageUiModel> = emptyList(),
     val isSendingMessage: Boolean = false
 )
 
 sealed class ChatSideEffect {
     object Pooling: ChatSideEffect()
     object MessageSent: ChatSideEffect()
+    object FakeSent: ChatSideEffect()
 }

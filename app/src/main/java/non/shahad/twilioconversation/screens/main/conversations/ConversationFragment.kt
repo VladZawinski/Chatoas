@@ -45,7 +45,7 @@ class ConversationFragment(
             ConversationItem(it, onClick = { conversation ->
                 findNavController().navigate(
                     R.id.actionConversationToChat,
-                    bundleOf("conversationId" to conversation.sid, "peer" to it.peer.name)
+                    bundleOf("conversationId" to conversation.conversationSid, "peer" to it.peer.name, "chatServiceSid" to it.chatServiceSid)
                 )
             })
         })

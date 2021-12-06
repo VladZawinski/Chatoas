@@ -6,9 +6,10 @@ import non.shahad.twilioconversation.databinding.ViewholderConversationBinding
 import non.shahad.twilioconversation.databinding.ViewholderIncomingChatBinding
 import non.shahad.twilioconversation.service.model.Conversation
 import non.shahad.twilioconversation.service.model.Message
+import non.shahad.twilioconversation.service.model.MessageUiModel
 
 class IncomingChatItem constructor(
-    private val message: Message
+    private val message: MessageUiModel
 ): BindableItem<ViewholderIncomingChatBinding>() {
 
     override fun bind(binding: ViewholderIncomingChatBinding, position: Int) {

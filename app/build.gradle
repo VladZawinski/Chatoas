@@ -55,9 +55,6 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 
-    implementation 'com.hannesdorfmann:adapterdelegates4-kotlin-dsl:4.3.1'
-    implementation 'com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:4.3.1'
-
     implementation "com.github.lisawray.groupie:groupie:$groupie_version"
     implementation "com.github.lisawray.groupie:groupie-databinding:$groupie_version"
 
@@ -65,6 +62,11 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
 
     implementation 'com.jakewharton.timber:timber:5.0.1'
+
+    implementation 'com.hannesdorfmann:adapterdelegates4-kotlin-dsl:4.3.1'
+    implementation 'com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:4.3.1'
+
+    implementation("io.coil-kt:coil:1.4.0")
 
     implementation 'org.orbit-mvi:orbit-core:4.2.0'
     implementation 'org.orbit-mvi:orbit-viewmodel:4.2.0'

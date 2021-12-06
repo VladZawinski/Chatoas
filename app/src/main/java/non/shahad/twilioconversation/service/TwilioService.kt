@@ -16,7 +16,8 @@ interface TwilioService {
      */
     @GET("chat/messages")
     suspend fun fetchMessages(
-        @Query("sid") sid: String
+        @Query("sid") sid: String,
+        @Query("chatServiceSid") chatServiceSid: String
     ): List<Message>
 
     @POST("chat/connect")
